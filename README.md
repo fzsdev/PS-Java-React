@@ -23,6 +23,7 @@ URL: http://localhost:8080/contas/{id} <br>
 Substitua {id} pelo ID numérico da conta desejada.
 Resultado: Retorna os detalhes da conta específica com o ID correspondente. Caso a conta não seja encontrada, retorna um
 status `404 Not Found`.
+
 ---
 
 - http://localhost:8080/transferencias
