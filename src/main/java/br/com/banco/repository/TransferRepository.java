@@ -13,7 +13,6 @@ public interface TransferRepository extends JpaRepository<Transferencia, Long> {
             "WHERE obj.dataTransferencia BETWEEN :min and :max ORDER BY obj.dataTransferencia DESC")
     Page<Transferencia> findTransferencias(LocalDate min, LocalDate max, Pageable pageable);
 
-    // Remova o método findById que não é necessário aqui
 
     @Query("SELECT obj FROM Transferencia obj " +
             "WHERE obj.nomeOperadorTransacao = :operadores")
