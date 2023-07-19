@@ -15,7 +15,6 @@ public class Conta {
     @Column(name = "nome_responsavel", nullable = false)
     private String nomeResponsavel;
 
-    // Getters and Setters
 
     public Long getId() {
         return id;
@@ -59,6 +58,4 @@ public class Conta {
         Conta other = (Conta) obj;
         return Objects.equals(id, other.id);
     }
-
-
 }

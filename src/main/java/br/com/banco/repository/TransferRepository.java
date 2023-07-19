@@ -9,6 +9,14 @@ import org.springframework.data.jpa.repository.Query;
 import java.time.LocalDate;
 
 public interface TransferRepository extends JpaRepository<Transferencia, Long> {
-    @Query("SELECT obj FROM Transferencia obj WHERE obj.dataTransferencia BETWEEN :min and :max ORDER BY obj.dataTransferencia DESC")
-    Page<Transferencia> findTranferencias(LocalDate min, LocalDate max, Pageable pageable);
+    @Query("SELECT obj FROM Transferencia obj " +
+            "WHERE obj.dataTransferencia BETWEEN :min and :max ORDER BY obj.dataTransferencia DESC")
+    Page<Transferencia> findTransferencias(LocalDate min, LocalDate max, Pageable pageable);
+
+    // Remova o método findById que não é necessário aqui
+
+    @Query("SELECT obj FROM Transferencia obj " +
+            "WHERE obj.nomeOperadorTransacao = :operadores")
+    Page<Transferencia> findByOperadores(String operadores, Pageable pageable);
 }
+
